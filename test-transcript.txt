@@ -1,0 +1,117 @@
+# Product Launch Planning — October 31, 2026
+
+**Meeting ID:** MW-DEMO-001  
+**Date:** October 31, 2026  
+**Time:** 10:00 AM – 10:45 AM  
+**Department:** Product & Engineering  
+**Participants:**
+- Alex Morgan — Product Manager
+- Priya Sharma — Engineering Lead
+- Rahul Mehta — Backend Developer
+- Neha Kapoor — Frontend Developer
+- Daniel Fernandes — Marketing Lead
+- Sarah Thomas — QA Engineer
+
+---
+
+## Transcript
+
+**[10:00 AM] Alex Morgan:** Good morning, everyone. Let's get started. The purpose of today's meeting is to finalize our progress on the product launch and identify anything that might prevent us from launching on November 20. Before we begin, I'd like to revisit a few things from our October 23 meeting. We had agreed that the payment integration would be completed by November 5, and the redesigned onboarding flow would be ready for internal testing by November 3. I want to know where we stand.
+
+**[10:01 AM] Priya Sharma:** From the engineering side, the payment integration is progressing well. Rahul has completed most of the backend API work, but the webhook handling still needs some testing. We should be able to finish the integration by November 5, provided the payment gateway credentials are received on time.
+
+**[10:02 AM] Rahul Mehta:** Yes, the API endpoints are complete. I've also implemented the transaction status callbacks. However, I'm still waiting for the production sandbox credentials from the payment provider. Without those, I can only test against the staging environment.
+
+**[10:03 AM] Alex Morgan:** Who is following up with the payment provider?
+
+**[10:03 AM] Priya Sharma:** I sent them an email yesterday. I'll follow up again today. If we don't receive the credentials by Monday, I'll escalate it.
+
+**[10:04 AM] Alex Morgan:** All right. Priya, please own that follow-up. Rahul, once the credentials arrive, complete the webhook testing and update the integration status. Let's keep November 5 as the target, but flag it as dependent on the credentials.
+
+**[10:05 AM] Rahul Mehta:** Understood.
+
+**[10:06 AM] Neha Kapoor:** Regarding the onboarding redesign, the frontend screens are mostly ready. I've completed the registration and profile setup screens. The remaining work is the verification screen and the responsive layout for smaller devices. I should be able to finish both by November 3.
+
+**[10:07 AM] Alex Morgan:** Great. Sarah, have you started preparing the test cases?
+
+**[10:07 AM] Sarah Thomas:** I've drafted the main registration and login test cases, but I haven't received the latest onboarding designs yet. I need the final screens from Neha before I can complete the UI validation cases.
+
+**[10:08 AM] Neha Kapoor:** I'll share the final designs by Monday afternoon.
+
+**[10:08 AM] Sarah Thomas:** That works. I can complete the remaining test cases by November 5, assuming I receive those designs on Monday.
+
+**[10:09 AM] Alex Morgan:** Let's make that an explicit dependency. Neha needs to share the final designs by November 2, and Sarah needs to finish the test cases by November 5.
+
+**[10:10 AM] Daniel Fernandes:** On the marketing side, we've drafted the launch announcement and the initial email campaign. However, the campaign currently assumes that the product will support all three payment methods: cards, UPI, and net banking. Do we know whether all three will be available at launch?
+
+**[10:11 AM] Priya Sharma:** Cards and UPI are definitely in scope. Net banking is still being evaluated. The payment provider has some additional compliance requirements, and we don't know whether we'll meet them in time.
+
+**[10:12 AM] Alex Morgan:** I don't want us advertising something that may not be available. Let's make a decision. Cards and UPI will be supported for launch. Net banking will be excluded from the initial launch unless engineering confirms feasibility by November 10.
+
+**[10:13 AM] Daniel Fernandes:** I'll update the campaign copy accordingly. I'll also prepare two versions of the announcement: one mentioning only cards and UPI, and another that includes net banking in case we get confirmation.
+
+**[10:14 AM] Alex Morgan:** That's fine, but the default campaign should only mention the confirmed payment methods.
+
+**[10:15 AM] Daniel Fernandes:** Understood. I'll share the revised campaign copy by November 6.
+
+**[10:16 AM] Sarah Thomas:** There's another issue. We haven't completed the security testing for account recovery. The current implementation allows password reset through email, but we haven't validated the rate-limiting behaviour.
+
+**[10:17 AM] Priya Sharma:** That's correct. Rahul has implemented the rate limiter, but we haven't tested it under repeated requests. I don't think this should block the entire product launch, but it must be validated before release.
+
+**[10:18 AM] Alex Morgan:** Agreed. Sarah, please add rate-limiting validation to the QA checklist. Rahul, support her if any backend changes are required. Can we finish this by November 12?
+
+**[10:19 AM] Sarah Thomas:** Yes, I can complete the testing by November 12, provided the staging environment remains stable.
+
+**[10:20 AM] Rahul Mehta:** I'll be available to help if any issues come up.
+
+**[10:21 AM] Alex Morgan:** Good. Now, let's discuss the analytics dashboard. We had initially planned to include advanced customer segmentation in the first release. Is that still realistic?
+
+**[10:22 AM] Neha Kapoor:** The basic dashboard is ready, but the advanced segmentation interface is only partially implemented. It will probably take another week.
+
+**[10:23 AM] Priya Sharma:** I would recommend postponing advanced segmentation. It isn't essential for the initial launch, and trying to squeeze it in could affect the stability of the dashboard.
+
+**[10:24 AM] Alex Morgan:** I agree. Let's move advanced customer segmentation to the next release. The basic analytics dashboard remains part of the November 20 launch.
+
+**[10:25 AM] Neha Kapoor:** In that case, I'll focus on fixing the remaining dashboard bugs rather than finishing segmentation.
+
+**[10:26 AM] Alex Morgan:** Perfect. Neha, please make sure the basic dashboard is ready for QA by November 9.
+
+**[10:27 AM] Daniel Fernandes:** We also need to decide on the launch webinar. Marketing has suggested November 19, but we haven't confirmed the date.
+
+**[10:28 AM] Alex Morgan:** November 19 might be too close to the actual launch. I'd prefer November 17. Daniel, can you check the availability of the speakers and the marketing team before we finalize it?
+
+**[10:29 AM] Daniel Fernandes:** Yes. I'll check with everyone and confirm by November 3.
+
+**[10:30 AM] Alex Morgan:** Good. For now, November 17 is a proposed date, not a confirmed event.
+
+**[10:31 AM] Priya Sharma:** There's one more concern. The staging environment has been intermittently unavailable over the last two days. This could affect QA timelines.
+
+**[10:32 AM] Rahul Mehta:** I noticed that too. The deployment logs show a few failed container restarts. I haven't identified the exact cause yet.
+
+**[10:33 AM] Priya Sharma:** Rahul, can you investigate the restart failures and share a brief technical report by November 4? We need to know whether this is an infrastructure issue or an application issue.
+
+**[10:34 AM] Rahul Mehta:** Sure. I'll investigate and share the report.
+
+**[10:35 AM] Sarah Thomas:** Until that's resolved, I can't guarantee that the November 12 testing deadline will hold. If the staging environment goes down during testing, we'll lose time.
+
+**[10:36 AM] Alex Morgan:** Let's record that as a risk. We won't change the QA deadline yet, but we'll review it after Rahul's report.
+
+**[10:37 AM] Daniel Fernandes:** I also wanted to ask about the launch budget. Last time we discussed a marketing budget of ₹2 lakh. Has that been approved?
+
+**[10:38 AM] Alex Morgan:** Not yet. Finance has asked us to provide a revised breakdown. I don't want to approve the spending until we receive their feedback.
+
+**[10:39 AM] Daniel Fernandes:** Should I prepare the revised breakdown?
+
+**[10:39 AM] Alex Morgan:** Yes, please. Share the revised marketing budget breakdown by November 4. The final budget approval will remain pending until Finance responds.
+
+**[10:40 AM] Daniel Fernandes:** All right.
+
+**[10:41 AM] Priya Sharma:** One last thing. We should schedule a launch readiness review after all the major QA activities are complete.
+
+**[10:42 AM] Alex Morgan:** Agreed. Let's tentatively schedule it for November 16 at 3 PM. It should include everyone here, plus someone from Finance if the budget is still pending. I'll send the final invitation once we confirm the availability.
+
+**[10:43 AM] Sarah Thomas:** That gives us enough time to review the testing results before launch.
+
+**[10:44 AM] Alex Morgan:** Great. To summarize, November 20 remains our target launch date. Cards and UPI are confirmed for launch, net banking is conditional, advanced segmentation is postponed, and the marketing budget is awaiting Finance approval. Please update your tasks and flag any blockers as soon as they arise.
+
+**[10:45 AM] Alex Morgan:** Thanks, everyone. Meeting adjourned.

@@ -1,0 +1,83 @@
+/*
+ * Design tokens. Every colour, font, radius, shadow and timing used by the app comes from here.
+ *
+ * Light is the default. Dark applies when <html data-theme="dark"> is set; the app sets that
+ * attribute from the user's choice (system, light or dark), see context.jsx and index.html.
+ * To re-theme, change values in this file only.
+ */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --color-amber: #f5bc42;
+  --color-amber-hover: #e5a92e;
+  --color-amber-soft: #fbefd0;
+  --color-on-amber: #111111;      /* text on amber buttons, constant in both themes */
+  --color-ink: #111111;           /* primary text and solid fills */
+  --color-on-ink: #ffffff;        /* text placed on solid ink fills */
+  --color-paper: #faf8f2;
+  --color-surface: #ffffff;
+  --color-muted: #777166;
+  --color-border: #e9e4d8;
+  --color-meeting: #eadff2;       /* meetings: muted lavender */
+  --color-deadline: #f3d9d3;      /* deadlines: dusty rose */
+  --color-completed: #dce9df;     /* completed: sage */
+  --color-danger: #9e3b2e;
+  --color-danger-soft: #f3d9d3;
+  --color-scrim: rgba(17, 17, 17, 0.25);
+  --glass: rgba(255, 255, 255, 0.78);
+  --shadow-soft: 0 1px 2px rgba(17, 17, 17, 0.04), 0 6px 20px rgba(17, 17, 17, 0.04);
+  --shadow-float: 0 16px 48px rgba(17, 17, 17, 0.12);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-amber: #f5bc42;
+  --color-amber-hover: #ffcb5c;
+  --color-amber-soft: #4a3b18;
+  --color-on-amber: #111111;
+  --color-ink: #f2eee6;
+  --color-on-ink: #141210;
+  --color-paper: #141311;
+  --color-surface: #1d1b18;
+  --color-muted: #a39c8e;
+  --color-border: #34302a;
+  --color-meeting: #3d3150;
+  --color-deadline: #4d322d;
+  --color-completed: #2f4536;
+  --color-danger: #f0a090;
+  --color-danger-soft: #4a2a25;
+  --color-scrim: rgba(0, 0, 0, 0.55);
+  --glass: rgba(29, 27, 24, 0.8);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.35), 0 6px 20px rgba(0, 0, 0, 0.25);
+  --shadow-float: 0 16px 48px rgba(0, 0, 0, 0.55);
+}
+
+:root {
+  /* typography */
+  --font-display: "EB Garamond", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* shape */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --glass-blur: saturate(140%) blur(14px);
+
+  /* spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* motion */
+  --ease: 160ms ease;
+
+  /* layout */
+  --sidebar-width: 232px;
+  --topbar-height: 64px;
+}
