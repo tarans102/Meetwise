@@ -7,6 +7,7 @@ import uuid
 from functools import lru_cache
 
 from fastapi import BackgroundTasks, FastAPI, File, Form, HTTPException, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from meetwise.config import settings
@@ -29,6 +30,18 @@ from datetime import date as _date
 
 logging.basicConfig(level=logging.INFO)
 app = FastAPI(title="MeetWise API", version="0.1.0")
+origins = [
+    "http://localhost:5173",
+    "https://meetwise-frontend-643p.onrender.com/",
+]
+# 2. Add the CORS middleware to the application
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @lru_cache
