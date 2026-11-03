@@ -32,7 +32,7 @@ logging.basicConfig(level=logging.INFO)
 app = FastAPI(title="MeetWise API", version="0.1.0")
 origins = [
     "http://localhost:5173",
-    "https://meetwise-frontend-643p.onrender.com/",
+    "https://meetwise-frontend-643p.onrender.com",
 ]
 # 2. Add the CORS middleware to the application
 app.add_middleware(
