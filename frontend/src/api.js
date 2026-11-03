@@ -1,10 +1,13 @@
 /*
- * Thin client for the MeetWise FastAPI backend. All paths are relative (/api/...),
- * proxied by Vite in development. Errors are thrown as Error with the server's message.
+ * Thin client for the MeetWise FastAPI backend. In development, /api requests
+ * are proxied by Vite; production builds can set VITE_APP_API_URL to the backend
+ * origin. Errors are thrown as Error with the server's message.
  */
+const apiBaseUrl = import.meta.env.VITE_APP_API_URL?.replace(/\/+$/, "") || "";
+
 async function request(path, options = {}) {
   const isForm = options.body instanceof FormData;
-  const response = await fetch(`/api${path}`, {
+  const response = await fetch(`${apiBaseUrl}/api${path}`, {
     ...options,
     headers: isForm || !options.body ? options.headers : { "Content-Type": "application/json", ...options.headers },
   });

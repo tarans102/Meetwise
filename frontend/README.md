@@ -12,6 +12,11 @@ npm run dev          # http://localhost:5173, proxies /api to http://localhost:8
 Start the backend first (`uvicorn meetwise.api.main:app --reload` from the backend folder).
 For a production build: `npm run build`, then serve `dist/` behind the same origin as `/api`.
 
+For a separately hosted frontend and backend, set `VITE_APP_API_URL` in the frontend
+build environment to the backend's origin (for example, `https://your-backend.onrender.com`,
+without a trailing slash) and rebuild/redeploy the frontend. The backend must allow
+the frontend's exact origin in its CORS configuration.
+
 ## Structure
 
 ```
